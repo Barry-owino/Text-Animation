@@ -18,6 +18,7 @@ h1{
   color:#fff;
   font-weight:300;
   position:relative;
+  z-index:1;
 }
 
 h1::before,h1::after{
@@ -28,7 +29,7 @@ h1::before,h1::after{
   top:50%;
   display:block;
   transform:translateX(-50%) translateY(-50%) rotate(0);
-  border:5px solid #26ff12;
+  animation:spin 6s alternate infinite ease-in-out;
 }
 
 h1::before{
@@ -39,5 +40,11 @@ h1::before{
 h1::after{
   border-bottom:5px solid #26ff12;
   border-right:5px solid #26ff12; 
+  z-index:-1;
+}
 
+@keyframes spin{
+  100%{
+    transform:translateX(-50%) transform translateY(-50%) rotate(360deg);
+  }
 }
